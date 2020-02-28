@@ -11,11 +11,18 @@ import NotFound from './components/NotFound';
 const App = () => {
   return (
     <div className='App'>
-      <SiteHeader />
+      <Route path='/' component={SiteHeader} />
       <Switch>
         <Route exact path='/' />
-        <Route path='/signup' component={Signup} />
-        <Route path='/login' component={Login} />
+        <Route
+          path='/login'
+          render={props => (
+            <div className='AuthPage'>
+              <Signup {...props} />
+              <Login {...props} />
+            </div>
+          )}
+        />
         <Route path='/blocked' component={Blocked} />
         <PrivateRoute path='/home' component={Home} />
         <Route component={NotFound} />

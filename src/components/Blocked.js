@@ -6,9 +6,9 @@ const Blocked = props => {
   return (
     <div className='Blocked'>
       <h1>You must be logged in to do that</h1>
-      <Link to='/login'>Log In</Link>
-      <p>or</p>
-      <Link to='/signup'>Create an account</Link>
+      <div className='buttons'>
+        <Link to='/login'>Log In</Link>
+      </div>
     </div>
   );
 };
