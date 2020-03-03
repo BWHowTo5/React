@@ -23,22 +23,6 @@ const SiteHeader = props => {
               Log In
             </Link>
           </li>
-          <li>
-            <Link
-              className={active === '/blocked' ? 'active' : null}
-              to='/blocked'
-            >
-              Protected Page
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={active === '/notareallink' ? 'active' : null}
-              to='/notareallink'
-            >
-              Bad Link
-            </Link>
-          </li>
         </ul>
       </nav>
     </div>

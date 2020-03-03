@@ -8,7 +8,21 @@ import {
 } from './actions';
 
 const store = {
-  testKey: 'testValue'
+  testKey: 'testValue',
+  user: {
+    id: -1,
+    username: '',
+    email: ''
+  },
+  howto: {
+    id: -1,
+    title: '',
+    summary: '',
+    content: '',
+    author: -1,
+    likes: 0,
+    dislikes: 0
+  }
 };
 
 const reducer = (state = store, action) => {

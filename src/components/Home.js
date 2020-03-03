@@ -1,22 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { howTos } from '../utils/data'; //TEMPORARY!!!!
 const Home = props => {
   return (
     <div className='Home'>
       <h1>Welcome User</h1>
       {howTos.map(howTo => (
-        <div className='howTo'>
+        <Link to={`/howto/${howTo.id}`} className='howTo'>
           <h2>
             {howTo.title} ID: {howTo.id}
           </h2>
-          <p>{howTo.content}</p>
+          <p>{howTo.preview}</p>
           <h4>Author: {howTo.author}</h4>
           <h3>
             Rating:&nbsp;
             {Math.ceil((howTo.likes / (howTo.likes + howTo.dislikes)) * 100)}%
           </h3>
-        </div>
+        </Link>
       ))}
     </div>
   );

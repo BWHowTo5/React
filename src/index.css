@@ -249,6 +249,7 @@ body {
   width: 40%;
   height: 36rem;
   margin: 2rem 0.5rem;
+  box-shadow: 4px 4px 4px #0007;
 }
 .Signup h3 {
   font-size: 3.2rem;
@@ -269,6 +270,7 @@ body {
   flex-flow: row nowrap;
 }
 .Signup .buttons div {
+  cursor: pointer;
   width: 9rem;
   color: #111;
   font-weight: bold;
@@ -276,6 +278,10 @@ body {
   padding: 5px;
   box-shadow: 4px 4px 4px #0007;
   margin: 2rem;
+}
+.Signup .buttons div:hover {
+  background-color: #7dd181;
+  box-shadow: 5px 5px 4px #000a;
 }
 .Signup .buttons .user {
   background-color: #c9ffe2;
@@ -292,6 +298,7 @@ body {
   width: 40%;
   height: 36rem;
   margin: 2rem 0.5rem;
+  box-shadow: 4px 4px 4px #0007;
 }
 .Login h3 {
   font-size: 3.2rem;
@@ -306,6 +313,7 @@ body {
   border: none;
 }
 .Login .button {
+  cursor: pointer;
   width: 9rem;
   background-color: #96e8bc;
   color: #111;
@@ -315,12 +323,19 @@ body {
   box-shadow: 4px 4px 4px #0007;
   margin: 2rem;
 }
+.Login .button:hover {
+  background-color: #7dd181;
+  box-shadow: 5px 5px 4px #000a;
+}
 .Home h1 {
   font-size: 3.2rem;
   text-align: center;
   margin: 2rem;
 }
 .Home .howTo {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   width: 80%;
   margin: 1rem auto;
   padding: 2rem;

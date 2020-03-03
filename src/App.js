@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Blocked from './components/Blocked';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
+import HowToPage from './components/HowToPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         />
         <Route path='/blocked' component={Blocked} />
         <PrivateRoute path='/home' component={Home} />
+        <PrivateRoute path='/howto/:id' component={HowToPage} />
         <Route component={NotFound} />
       </Switch>
     </div>
