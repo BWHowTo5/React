@@ -8,10 +8,14 @@
   height: 36rem;
   margin: 2rem 0.5rem;
   box-shadow: 4px 4px 4px #0007;
+
   h3 {
     font-size: 3.2rem;
     padding: 2rem;
     color: @off-white;
+  }
+  form {
+    .flex(space-evenly, center, column);
   }
   input {
     padding: 0.8rem;
@@ -19,10 +23,22 @@
     text-align: center;
     box-shadow: inset 4px 4px 3px #0009;
     border: none;
+    &:focus {
+      outline: 2px solid lighten(@success-green, 15%);
+    }
+  }
+  .formError {
+    height: 1.4rem;
+    font-size: 1.4rem;
+    font-family: @sub-font;
+    letter-spacing: 1px;
+    color: lighten(@error-red, 15%);
+    text-shadow: 1px 1px 0 #333;
   }
   .buttons {
     .flex();
-    div {
+    button {
+      border: none;
       cursor: pointer;
       width: 9rem;
       color: @off-black;
@@ -35,6 +51,13 @@
         background-color: @pastel-green;
         box-shadow: 5px 5px 4px #000a;
       }
+      &:active {
+        box-shadow: 3px 3px 4px #000a;
+        transition: 0.15s ease-in-out;
+      }
+      &:focus {
+        outline: 1px solid darken(@success-green, 25%);
+      }
     }
     .user {
       background-color: @aero-green;
@@ -45,7 +68,7 @@
   }
 }
 .Login {
-  .flex(space-evenly, center, column);
+  .flex(center, center, column);
   background-color: @success-green;
   width: 40%;
   height: 36rem;
@@ -56,12 +79,26 @@
     padding: 2rem;
     color: @off-white;
   }
+  form {
+    .flex(space-evenly, center, column);
+  }
+  .formError {
+    height: 1.4rem;
+    font-size: 1.4rem;
+    font-family: @sub-font;
+    letter-spacing: 1px;
+    color: lighten(@error-red, 15%);
+    text-shadow: 1px 1px 0 #333;
+  }
   input {
     padding: 0.8rem;
     margin: 0.5rem 1rem;
     text-align: center;
     box-shadow: inset 4px 4px 3px #0009;
     border: none;
+    &:focus {
+      outline: 2px solid lighten(@success-green, 15%);
+    }
   }
   .button {
     cursor: pointer;
@@ -76,6 +113,13 @@
     &:hover {
       background-color: @pastel-green;
       box-shadow: 5px 5px 4px #000a;
+    }
+    &:active {
+      box-shadow: 3px 3px 4px #000a;
+      transition: 0.15s ease-in-out;
+    }
+    &:focus {
+      outline: 1px solid darken(@success-green, 25%);
     }
   }
 }

@@ -71,3 +71,70 @@ export const dislikes = [
   { id: 2, user: 2, howto: 2 },
   { id: 3, user: 3, howto: 2 }
 ];
+
+/* ENDPOINTS
+GET    https://how-to-5-api.herokuapp.com/
+        - NO INPUT
+GET    https://how-to-5-api.herokuapp.com/api/users/
+        - NO INPUT
+GET    https://how-to-5-api.herokuapp.com/api/users/:id/
+        - NO INPUT
+POST   https://how-to-5-api.herokuapp.com/api/users/register/
+        {
+          "username": "Test User",
+          "email": "testuser@test.com",
+          "password": "testpassword",
+          "creator": true
+        }
+POST   https://how-to-5-api.herokuapp.com/api/users/login/
+        {
+            "email": "testuser@test.com",
+            "password": "testpassword"
+        }
+PUT    https://how-to-5-api.herokuapp.com/api/users/:id/
+        {
+          "email": "testuser111@test.com",
+          "password": "newpassword"
+        }
+DELETE https://how-to-5-api.herokuapp.com/api/users/:id/
+        - NO INPUT
+GET    https://how-to-5-api.herokuapp.com/api/how-tos/
+        - NO INPUT
+GET    https://how-to-5-api.herokuapp.com/api/how-tos/:id/
+        - NO INPUT
+POST   https://how-to-5-api.herokuapp.com/api/how-tos/
+        {
+          "title": "Postman Test",
+          "summary": "Postman test test test",
+          "content": "Postman test test test test test test test test test test.",
+          "user_id": 1
+        }
+PUT    https://how-to-5-api.herokuapp.com/api/how-tos/:id/ !!!No Content/Summary!!!
+        {
+            "title": "Update Test",
+            "likes": 5,
+            "dislikes": 2
+        }
+DELETE https://how-to-5-api.herokuapp.com/api/how-tos/:id/
+        - NO INPUT
+POST   https://how-to-5-api.herokuapp.com/api/likes/
+        {
+          "user_id": 4,
+          "how_to_id": 4
+        }
+DELETE https://how-to-5-api.herokuapp.com/api/likes/
+        {
+          "user_id": 4,
+          "how_to_id": 4
+        }
+POST   https://how-to-5-api.herokuapp.com/api/dislikes/
+        {
+          "user_id": 4,
+          "how_to_id": 4
+        }
+DELETE https://how-to-5-api.herokuapp.com/api/dislikes/
+        {
+          "user_id": 4,
+          "how_to_id": 4
+        }
+*/

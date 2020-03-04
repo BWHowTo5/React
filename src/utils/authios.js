@@ -1,10 +1,10 @@
-//This file is for axios with auth
+import axios from 'axios';
 
 const authios = () => {
   const token = localStorage.getItem('token');
 
   return axios.create({
-    baseURL: 'https://localhost:4000/',
+    baseURL: 'https://how-to-5-api.herokuapp.com/api/',
     headers: {
       Authorization: token
     }

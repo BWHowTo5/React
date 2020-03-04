@@ -15,7 +15,7 @@ const HowToPage = props => {
         <div>Dislike</div>
       </div>
       <main>
-        <p>{howTos[id - 1].content}</p>
+        <p>{howTos[id - 1].content}</p>g
       </main>
     </div>
   );

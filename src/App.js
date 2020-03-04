@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import PrivateRoute from './utils/PrivateRoute';
 import SiteHeader from './components/Siteheader';
 import Signup from './components/Signup';
@@ -15,7 +15,7 @@ const App = () => {
     <div className='App'>
       <Route path='/' component={SiteHeader} />
       <Switch>
-        <Route exact path='/' />
+        <Route exact path='/' render={() => <Redirect to='login' />} />
         <Route
           path='/login'
           render={props => (

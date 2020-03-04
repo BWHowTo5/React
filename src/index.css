@@ -256,6 +256,12 @@ body {
   padding: 2rem;
   color: #eee;
 }
+.Signup form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+}
 .Signup input {
   padding: 0.8rem;
   margin: 0.5rem 1rem;
@@ -263,13 +269,25 @@ body {
   box-shadow: inset 4px 4px 3px #0009;
   border: none;
 }
+.Signup input:focus {
+  outline: 2px solid #6da975;
+}
+.Signup .formError {
+  height: 1.4rem;
+  font-size: 1.4rem;
+  font-family: 'Bitter', Times;
+  letter-spacing: 1px;
+  color: #ea9595;
+  text-shadow: 1px 1px 0 #333;
+}
 .Signup .buttons {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-flow: row nowrap;
 }
-.Signup .buttons div {
+.Signup .buttons button {
+  border: none;
   cursor: pointer;
   width: 9rem;
   color: #111;
@@ -279,9 +297,16 @@ body {
   box-shadow: 4px 4px 4px #0007;
   margin: 2rem;
 }
-.Signup .buttons div:hover {
+.Signup .buttons button:hover {
   background-color: #7dd181;
   box-shadow: 5px 5px 4px #000a;
+}
+.Signup .buttons button:active {
+  box-shadow: 3px 3px 4px #000a;
+  transition: 0.15s ease-in-out;
+}
+.Signup .buttons button:focus {
+  outline: 1px solid #1c2f1e;
 }
 .Signup .buttons .user {
   background-color: #c9ffe2;
@@ -291,7 +316,7 @@ body {
 }
 .Login {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
   background-color: #4b7f52;
@@ -305,12 +330,29 @@ body {
   padding: 2rem;
   color: #eee;
 }
+.Login form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.Login .formError {
+  height: 1.4rem;
+  font-size: 1.4rem;
+  font-family: 'Bitter', Times;
+  letter-spacing: 1px;
+  color: #ea9595;
+  text-shadow: 1px 1px 0 #333;
+}
 .Login input {
   padding: 0.8rem;
   margin: 0.5rem 1rem;
   text-align: center;
   box-shadow: inset 4px 4px 3px #0009;
   border: none;
+}
+.Login input:focus {
+  outline: 2px solid #6da975;
 }
 .Login .button {
   cursor: pointer;
@@ -326,6 +368,13 @@ body {
 .Login .button:hover {
   background-color: #7dd181;
   box-shadow: 5px 5px 4px #000a;
+}
+.Login .button:active {
+  box-shadow: 3px 3px 4px #000a;
+  transition: 0.15s ease-in-out;
+}
+.Login .button:focus {
+  outline: 1px solid #1c2f1e;
 }
 .Home h1 {
   font-size: 3.2rem;
