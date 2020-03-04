@@ -20,6 +20,19 @@ export const howTos = [
     author: 5,
     likes: 5,
     dislikes: 10
+  },
+  {
+    id: 3,
+    title: 'How to print a todo',
+    preview: 'This string is a preview of a howto item',
+    content: `#heading 1
+##heading 2
+###heading 3
+[this goes to google](https://www.google.com/)
+This is a picture <https://source.unsplash.com/random>`,
+    author: 5,
+    likes: 5,
+    dislikes: 10
   }
 ];
 

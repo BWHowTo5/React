@@ -8,6 +8,7 @@ import Blocked from './components/Blocked';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import HowToPage from './components/HowToPage';
+import HowToEditor from './components/HowToEditor';
 
 const App = () => {
   return (
@@ -26,7 +27,8 @@ const App = () => {
         />
         <Route path='/blocked' component={Blocked} />
         <PrivateRoute path='/home' component={Home} />
-        <PrivateRoute path='/howto/:id' component={HowToPage} />
+        <PrivateRoute exact path='/howto/:id' component={HowToPage} />
+        <PrivateRoute path='/howto/:id/edit' component={HowToEditor} />
         <Route component={NotFound} />
       </Switch>
     </div>

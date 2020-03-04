@@ -357,3 +357,41 @@ body {
   font-style: italic;
   text-align: center;
 }
+.HowToEditor {
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+.HowToEditor .help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  width: 80%;
+}
+.HowToEditor .help h3 {
+  text-align: center;
+}
+.HowToEditor .help h3:first-child {
+  text-align: left;
+  margin-left: 10px;
+}
+.HowToEditor .help h3:last-child {
+  text-align: right;
+  margin-right: 10px;
+}
+.HowToEditor .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.HowToEditor textarea {
+  resize: none;
+  width: 80%;
+  height: 60rem;
+  margin-top: 4px;
+}

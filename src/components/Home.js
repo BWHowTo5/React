@@ -7,7 +7,7 @@ const Home = props => {
     <div className='Home'>
       <h1>Welcome User</h1>
       {howTos.map(howTo => (
-        <Link to={`/howto/${howTo.id}`} className='howTo'>
+        <Link to={`/howto/${howTo.id}`} key={howTo.id} className='howTo'>
           <h2>
             {howTo.title} ID: {howTo.id}
           </h2>

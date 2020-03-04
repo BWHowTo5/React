@@ -1,0 +1,30 @@
+.HowToEditor {
+  margin: 20px auto;
+  .flex(flex-start, center, column);
+  width: 100%;
+
+  .help {
+    .flex(space-between, center);
+    width: 80%;
+    h3 {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+        margin-left: 10px;
+      }
+      &:last-child {
+        text-align: right;
+        margin-right: 10px;
+      }
+    }
+  }
+  .buttons {
+    .flex(center, center);
+  }
+  textarea {
+    resize: none;
+    width: 80%;
+    height: 60rem;
+    margin-top: 4px;
+  }
+}

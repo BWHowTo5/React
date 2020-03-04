@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { howTos } from '../utils/data';
 const HowToPage = props => {
+  const id = props.match.params.id;
   return (
     <div className='HowToPage'>
       <header>
@@ -14,7 +15,7 @@ const HowToPage = props => {
         <div>Dislike</div>
       </div>
       <main>
-        <p>This is where the content of a howto is parsed and rendered</p>
+        <p>{howTos[id - 1].content}</p>
       </main>
     </div>
   );
