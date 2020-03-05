@@ -29,6 +29,7 @@ const App = () => {
         <PrivateRoute path='/home' component={Home} />
         <PrivateRoute exact path='/howto/:id' component={HowToPage} />
         <PrivateRoute path='/howto/:id/edit' component={HowToEditor} />
+        <PrivateRoute path='/howto/new/edit' component={HowToEditor} />
         <Route component={NotFound} />
       </Switch>
     </div>

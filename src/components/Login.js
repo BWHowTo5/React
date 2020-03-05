@@ -13,9 +13,9 @@ const Login = props => {
         initialValues={{ email: '', password: '' }}
         validationSchema={Yup.object().shape({
           email: Yup.string()
-            .email('Not a valid e-mail address.')
-            .required('Email is required.'),
-          password: Yup.string().required('Password is required.')
+            .email('Not a valid e-mail address')
+            .required('Email is required'),
+          password: Yup.string().required('Password is required')
         })}
         onSubmit={values => {
           props.signin(values);

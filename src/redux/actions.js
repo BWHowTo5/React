@@ -1,6 +1,5 @@
 import axios from 'axios';
 // import authios from '../utils/authios';
-
 export const HANDLE_ERROR = 'HANDLE_ERROR';
 
 export const handleError = () => dispatch => {
@@ -24,7 +23,7 @@ export const SIGNOUT_USER = 'SIGNOUT_USER';
 export const signup = user => dispatch => {
   dispatch({ type: SIGNUP_USER_REQUEST, payload: null });
   axios
-    .post('https://how-to-5-api.herokuapp.com/api/users/register/', user)
+    .post('https://how-to-5-api.herokuapp.com/api/users/register', user)
     .then(res => {
       console.log(res.data);
       window.localStorage.setItem('token', res.data.token);
@@ -38,9 +37,9 @@ export const signup = user => dispatch => {
 export const signin = form => dispatch => {
   dispatch({ type: SIGNIN_USER_REQUEST, payload: null });
   axios
-    .post('https://how-to-5-api.herokuapp.com/api/users/login/', form)
+    .post('https://how-to-5-api.herokuapp.com/api/users/login', form)
     .then(res => {
-      console.log(res.data);
+      console.log(res);
       window.localStorage.setItem('token', res.data.token);
       dispatch({ type: SIGNIN_USER_SUCCESS, payload: res.data });
     })
@@ -56,4 +55,30 @@ export const signout = () => dispatch => {
     type: SIGNOUT_USER,
     payload: { id: -1, username: '', email: '' }
   });
+};
+
+export const HOWTOS_REQUEST = 'HOWTOS_REQUEST';
+export const HOWTOS_SUCCESS = 'HOWTOS_SUCCESS';
+export const HOWTOS_FAILURE = 'HOWTOS_FAILURE';
+
+export const howTos = () => dispatch => {
+  dispatch({ type: HOWTOS_REQUEST, payload: null });
+  //authios
+  //.get('/howtos')
+  axios
+    .get('https://how-to-5-api.herokuapp.com/api/how-tos')
+    .then(res => {
+      console.log(res.data);
+      dispatch({ type: HOWTOS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log('An error occured:', err);
+      dispatch({ type: HOWTOS_FAILURE, payload: err });
+    });
+};
+
+export const HOLD_HOWTO_FORM = 'HOLD_HOWTO_FORM';
+
+export const holdHowToForm = form => dispatch => {
+  dispatch({ type: HOLD_HOWTO_FORM, payload: form });
 };

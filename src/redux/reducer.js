@@ -6,7 +6,11 @@ import {
   SIGNIN_USER_SUCCESS,
   SIGNIN_USER_FAILURE,
   HANDLE_ERROR,
-  SIGNOUT_USER
+  SIGNOUT_USER,
+  HOWTOS_REQUEST,
+  HOWTOS_FAILURE,
+  HOWTOS_SUCCESS,
+  HOLD_HOWTO_FORM
 } from './actions';
 
 const store = {
@@ -25,6 +29,7 @@ const store = {
     likes: 0,
     dislikes: 0
   },
+  howtos: [],
   awaiting: false,
   error: null
 };
@@ -34,19 +39,22 @@ const reducer = (state = store, action) => {
   switch (type) {
     case SIGNUP_USER_REQUEST:
     case SIGNIN_USER_REQUEST:
+    case HOWTOS_REQUEST:
       return {
         ...state,
         awaiting: true
       };
     case SIGNUP_USER_FAILURE:
     case SIGNIN_USER_FAILURE:
+    case HOWTOS_FAILURE:
       return {
         ...state,
-        error: payload
+        error: payload,
+        awaiting: false
       };
     case SIGNUP_USER_SUCCESS:
     case SIGNIN_USER_SUCCESS:
-      console.log(window.localStorage.getItem('token'));
+      console.log(payload);
       return {
         ...state,
         user: {
@@ -62,6 +70,14 @@ const reducer = (state = store, action) => {
         ...state,
         user: payload
       };
+    case HOWTOS_SUCCESS:
+      return {
+        ...state,
+        howtos: payload,
+        awaiting: false
+      };
+    case HOLD_HOWTO_FORM:
+      return { ...state, howto: payload };
     case HANDLE_ERROR:
       return {
         ...state,

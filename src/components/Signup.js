@@ -20,10 +20,10 @@ const Signup = props => {
               /^[a-zA-Z0-9_.]*$/,
               'Username cannot contain special characters'
             )
-            .required('Username is Required'),
+            .required('Username is required'),
           email: Yup.string()
             .email('Not a valid e-mail address.')
-            .required('Email is required.'),
+            .required('Email is required'),
           password: Yup.string()
             .min(8, 'Password must be least 8 characters')
             .matches(
@@ -34,13 +34,13 @@ const Signup = props => {
               /^[a-zA-Z0-9_!@#$%^&*()?~]*$/,
               'Password contains a restricted character'
             )
-            .required('Password is required.'),
+            .required('Password is required'),
           confirm: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
-            .required('You must confirm your password.')
+            .required('You must confirm your password')
         })}
         onSubmit={values => {
-          props.signin({
+          props.signup({
             username: values.username,
             email: values.email,
             password: values.password,

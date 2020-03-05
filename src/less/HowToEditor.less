@@ -1,11 +1,58 @@
 .HowToEditor {
   margin: 20px auto;
   .flex(flex-start, center, column);
-  width: 100%;
 
+  width: 100%;
+  h1 {
+    font-size: 4.8rem;
+    font-family: @brand-font;
+    margin-bottom: 10px;
+  }
+  form {
+    width: 90%;
+    .flex(flex-start, center, column);
+    background-color: @pastel-green;
+    padding: 10px 10%;
+    box-shadow: 4px 4px 4px #0007;
+  }
+  .formBody {
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  textarea {
+    resize: none;
+  }
+  .title {
+    height: 2.7rem;
+    width: 100%;
+    font-size: 2rem;
+    font-family: @sub-font;
+    font-weight: bold;
+    text-align: center;
+  }
+  .summary {
+    height: 11.2rem;
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: @sub-font;
+  }
+  .content {
+    width: 100%;
+    height: 60rem;
+    margin-top: 4px;
+    font-size: 1.6rem;
+    font-family: @sub-font;
+  }
   .help {
     .flex(space-between, center);
-    width: 80%;
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: @mono-font;
     h3 {
       text-align: center;
       &:first-child {
@@ -21,10 +68,63 @@
   .buttons {
     .flex(center, center);
   }
-  textarea {
-    resize: none;
-    width: 80%;
-    height: 60rem;
-    margin-top: 4px;
+  button {
+    border: none;
+    cursor: pointer;
+    width: 9rem;
+    color: @off-black;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 4px 4px 4px #000a;
+    margin: 2rem;
+    &:hover {
+      box-shadow: 5px 5px 4px #000f;
+    }
+    &:active {
+      box-shadow: 3px 3px 4px #000f;
+      transition: 0.15s ease-in-out;
+    }
+    &:focus {
+      outline: 1px solid darken(@success-green, 25%);
+    }
+  }
+
+  .preview {
+    background-color: @teal-deer;
+    &:hover {
+      background-color: darken(@teal-deer, 10%);
+    }
+  }
+  .submit {
+    background-color: darken(@pastel-green, 10%);
+    &:hover {
+      background-color: darken(@pastel-green, 15%);
+    }
+  }
+  .clear {
+    background-color: @warning-yellow;
+    &:hover {
+      background-color: darken(@warning-yellow, 10%);
+    }
+  }
+  .cancel {
+    background-color: @error-red;
+    &:hover {
+      background-color: darken(@error-red, 10%);
+    }
+  }
+  .formError {
+    text-align: center;
+    width: 99%;
+    margin: 6px auto;
+    height: 2.2rem;
+    font-size: 1.4rem;
+    font-family: @mono-font;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: darken(@error-red, 15%);
+
+    padding: 0.4rem 0;
   }
 }
