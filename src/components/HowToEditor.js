@@ -35,7 +35,7 @@ const HowToEditor = props => {
             .min(40, 'Content must have at least 40 characters')
             .matches(
               //This restriction helps prevent SQL injections
-              /^[a-zA-Z0-9_!@#$%^&*()?~+`~,. :'"\n[\]<>-]*$/,
+              /^[a-zA-Z0-9_!@#$%^&*()?~+`~,/. :'"\n[\]<>-]*$/,
               'Content contains a restricted character'
             )
             .required('Content is required')
