@@ -42,7 +42,6 @@ const HowToEditor = props => {
         })}
         onSubmit={values => {
           if (props.match.params.id) {
-            console.log('id found');
             props.holdHowToForm({
               id: props.howto.id,
               title: values.title,
@@ -53,7 +52,6 @@ const HowToEditor = props => {
               dislikes: props.howto.id
             });
           } else {
-            console.log('id not found');
             props.holdHowToForm({
               id: -1,
               title: values.title,
@@ -115,14 +113,14 @@ const HowToEditor = props => {
             </div>
             <div className='formBody'>
               <h2>Title</h2>
-              <Field component='textarea' className='title' name='title' />
+              <Field component='textarea' className='Title' name='title' />
               {touched.title && errors.title ? (
                 <div className='formError on'>{errors.title}</div>
               ) : (
                 <div className='formError' />
               )}
               <h2>Summary</h2>
-              <Field component='textarea' className='summary' name='summary' />
+              <Field component='textarea' className='Summary' name='summary' />
               {touched.summary && errors.summary ? (
                 <div className='formError on'>{errors.summary}</div>
               ) : (
@@ -140,7 +138,7 @@ const HowToEditor = props => {
                 <h3>[Link Text](URL) to make a link</h3>
                 <h3>&lt;URL&gt; to import a picture</h3>
               </div>
-              <Field component='textarea' className='content' name='content' />
+              <Field component='textarea' className='Content' name='content' />
             </div>
             <div className='buttons'>
               <button
@@ -187,7 +185,16 @@ const HowToEditor = props => {
           </Form>
         )}
       </Formik>
-      {showPreview ? <HowToParser /> : null}
+      {showPreview ? (
+        <div
+          onClick={e => {
+            if (e.target.className === 'parseContainer') setShowPreview(false);
+          }}
+          className='parseContainer'
+        >
+          <HowToParser onClick={e => e.stopPropgation()} />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -25,11 +25,11 @@ export const howTos = [
     id: 3,
     title: 'How to print a todo',
     preview: 'This string is a preview of a howto item',
-    content: `#heading 1
-##heading 2
-###heading 3
-[this goes to google](https://www.google.com/)
-This is a picture <https://source.unsplash.com/random>`,
+    content: `#Heading1
+##Heading1
+###Heading3
+This [link](https://www.google.com/) in one line.
+This goes on top <https://source.unsplash.com/random> and this goes on bottom.`,
     author: 5,
     likes: 5,
     dislikes: 10
