@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { signout } from '../redux/actions';
 
 const SiteHeader = props => {
   const active = props.location.pathname;
@@ -17,11 +18,29 @@ const SiteHeader = props => {
               Home
             </Link>
           </li>
+          {props.user.creator ? (
+            <li>
+              <Link
+                className={active === '/howtos/new/edit' ? 'active' : null}
+                to='/howtos/new/edit'
+              >
+                Create
+              </Link>
+            </li>
+          ) : null}
           <li>
-            <Link className={active === '/login' ? 'active' : null} to='/login'>
-              {' '}
-              Log In
-            </Link>
+            {window.localStorage.getItem('token') ? (
+              <Link to='/login' onClick={props.signout}>
+                Log Out
+              </Link>
+            ) : (
+              <Link
+                className={active === '/login' ? 'active' : null}
+                to='/login'
+              >
+                Log In
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
@@ -31,8 +50,8 @@ const SiteHeader = props => {
 
 const mapStateToProps = state => {
   return {
-    test: state.testKey
+    user: state.user
   };
 };
 
-export default connect(mapStateToProps, {})(SiteHeader);
+export default connect(mapStateToProps, { signout })(SiteHeader);

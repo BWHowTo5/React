@@ -10,7 +10,10 @@ import {
   HOWTOS_REQUEST,
   HOWTOS_FAILURE,
   HOWTOS_SUCCESS,
-  HOLD_HOWTO_FORM
+  HOLD_HOWTO_FORM,
+  HOWTO_REQUEST,
+  HOWTO_FAILURE,
+  HOWTO_SUCCESS
 } from './actions';
 
 const store = {
@@ -18,7 +21,8 @@ const store = {
   user: {
     id: -1,
     username: '',
-    email: ''
+    email: '',
+    creator: false
   },
   howto: {
     id: -1,
@@ -40,6 +44,7 @@ const reducer = (state = store, action) => {
     case SIGNUP_USER_REQUEST:
     case SIGNIN_USER_REQUEST:
     case HOWTOS_REQUEST:
+    case HOWTO_REQUEST:
       return {
         ...state,
         awaiting: true
@@ -47,6 +52,7 @@ const reducer = (state = store, action) => {
     case SIGNUP_USER_FAILURE:
     case SIGNIN_USER_FAILURE:
     case HOWTOS_FAILURE:
+    case HOWTO_FAILURE:
       return {
         ...state,
         error: payload,
@@ -62,19 +68,29 @@ const reducer = (state = store, action) => {
           username: payload.username,
           email: payload.email
         },
-        awaiting: false
+        awaiting: false,
+        error: null
       };
     case SIGNOUT_USER:
       console.log(window.localStorage.getItem('token'));
       return {
         ...state,
-        user: payload
+        user: payload,
+        error: null
       };
     case HOWTOS_SUCCESS:
       return {
         ...state,
         howtos: payload,
-        awaiting: false
+        awaiting: false,
+        error: null
+      };
+    case HOWTO_SUCCESS:
+      return {
+        ...state,
+        howto: payload,
+        awaiting: false,
+        error: null
       };
     case HOLD_HOWTO_FORM:
       return { ...state, howto: payload };

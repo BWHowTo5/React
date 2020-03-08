@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import authios from '../utils/authios';
+import authios from '../utils/authios';
 export const HANDLE_ERROR = 'HANDLE_ERROR';
 
 export const handleError = () => dispatch => {
@@ -26,7 +26,7 @@ export const signup = user => dispatch => {
     .post('https://how-to-5-api.herokuapp.com/api/users/register', user)
     .then(res => {
       console.log(res.data);
-      window.localStorage.setItem('token', res.data.token);
+      window.localStorage.setItem('token', res.data.authToken);
       dispatch({ type: SIGNUP_USER_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -40,7 +40,7 @@ export const signin = form => dispatch => {
     .post('https://how-to-5-api.herokuapp.com/api/users/login', form)
     .then(res => {
       console.log(res);
-      window.localStorage.setItem('token', res.data.token);
+      window.localStorage.setItem('token', res.data.authToken);
       dispatch({ type: SIGNIN_USER_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -63,10 +63,8 @@ export const HOWTOS_FAILURE = 'HOWTOS_FAILURE';
 
 export const howTos = () => dispatch => {
   dispatch({ type: HOWTOS_REQUEST, payload: null });
-  //authios
-  //.get('/howtos')
-  axios
-    .get('https://how-to-5-api.herokuapp.com/api/how-tos')
+  authios()
+    .get('/how-tos')
     .then(res => {
       console.log(res.data);
       dispatch({ type: HOWTOS_SUCCESS, payload: res.data });
@@ -74,6 +72,24 @@ export const howTos = () => dispatch => {
     .catch(err => {
       console.log('An error occured:', err);
       dispatch({ type: HOWTOS_FAILURE, payload: err });
+    });
+};
+
+export const HOWTO_REQUEST = 'HOWTO_REQUEST';
+export const HOWTO_SUCCESS = 'HOWTO_SUCCESS';
+export const HOWTO_FAILURE = 'HOWTO_FAILURE';
+
+export const howTo = id => dispatch => {
+  dispatch({ type: HOWTO_REQUEST, payload: null });
+  authios()
+    .get(`/how-tos/${id}`)
+    .then(res => {
+      console.log(res.data);
+      dispatch({ type: HOWTO_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log('An error occured:', err);
+      dispatch({ type: HOWTO_FAILURE, payload: err });
     });
 };
 

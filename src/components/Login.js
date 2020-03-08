@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { signin } from '../redux/actions';
+import { Redirect } from 'react-router-dom';
 
 const Login = props => {
   return (
     <div className='Login'>
+      {window.localStorage.getItem('token') ? <Redirect to='/home' /> : null}
       <h3>Log In</h3>
       <Formik
         className='userForm'
@@ -45,7 +47,7 @@ const Login = props => {
 
 const mapStateToProps = state => {
   return {
-    test: state.testKey
+    user: state.user
   };
 };
 
