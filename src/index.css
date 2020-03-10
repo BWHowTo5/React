@@ -133,4 +133,478 @@ html {
 }
 body {
   font-size: 1.6rem;
+  font-family: 'Source Sans Pro', Verdana;
+}
+.SiteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 1rem 2rem;
+  background-color: #4b7f52;
+  color: #eee;
+}
+.SiteHeader .SiteName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-flow: row nowrap;
+}
+.SiteHeader .SiteName h1 {
+  font-size: 4.2rem;
+  font-family: 'Bungee Inline', Impact;
+}
+.SiteHeader .SiteName h4 {
+  font-size: 1.4rem;
+  font-family: 'Bitter', Times;
+  padding-bottom: 0.4rem;
+}
+.SiteHeader nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+}
+.SiteHeader nav ul li {
+  padding: 1.5rem 1.5rem;
+  margin: 0.5rem;
+}
+.SiteHeader nav ul li a {
+  font-family: 'Source Sans Pro', Verdana;
+  font-size: 1.8rem;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+.SiteHeader nav ul li a.active {
+  font-weight: bold;
+}
+.SiteHeader nav ul li:hover {
+  background-color: #7dd181;
+  color: #4b7f52;
+}
+.SiteHeader nav ul li:first-child {
+  border-left: none;
+}
+.NotFound {
+  text-align: center;
+  padding: 5rem;
+}
+.NotFound h1 {
+  font-size: 6rem;
+  font-family: 'Bungee Inline', Impact;
+  padding-bottom: 3rem;
+}
+.NotFound h2 {
+  font-size: 2.8rem;
+  font-family: 'Source Sans Pro', Verdana;
+}
+.Blocked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  margin: 5rem auto;
+  padding: 5rem;
+  width: 50%;
+  background-color: #4b7f52;
+  color: #eee;
+  box-shadow: 4px 4px 4px #0007;
+}
+.Blocked h1 {
+  font-size: 2.8rem;
+  font-family: 'Source Sans Pro', Verdana;
+  padding-bottom: 3rem;
+}
+.Blocked .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  font-size: 2.4rem;
+}
+.Blocked .buttons a {
+  background-color: #96e8bc;
+  color: #111;
+  text-decoration: none;
+  box-shadow: 4px 4px 4px #0007;
+  padding: 1rem 3rem;
+}
+.Blocked .buttons a:hover {
+  background-color: #7dd181;
+  box-shadow: 5px 5px 4px #000a;
+}
+.AuthPage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+}
+.Signup {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #4b7f52;
+  width: 40%;
+  height: 36rem;
+  margin: 2rem 0.5rem;
+  box-shadow: 4px 4px 4px #0007;
+}
+.Signup h3 {
+  font-size: 3.2rem;
+  padding: 2rem;
+  color: #eee;
+}
+.Signup form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.Signup input {
+  padding: 0.8rem;
+  margin: 0.5rem 1rem;
+  text-align: center;
+  box-shadow: inset 4px 4px 3px #0009;
+  border: none;
+}
+.Signup input:focus {
+  outline: 2px solid #6da975;
+}
+.Signup .formError {
+  height: 1.4rem;
+  font-size: 1.4rem;
+  font-family: 'Bitter', Times;
+  letter-spacing: 1px;
+  color: #ea9595;
+  text-shadow: 1px 1px 0 #333;
+}
+.Signup .buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+}
+.Signup .buttons button {
+  border: none;
+  cursor: pointer;
+  width: 9rem;
+  color: #111;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 4px 4px 4px #0007;
+  margin: 2rem;
+}
+.Signup .buttons button:hover {
+  background-color: #7dd181;
+  box-shadow: 5px 5px 4px #000a;
+}
+.Signup .buttons button:active {
+  box-shadow: 3px 3px 4px #000a;
+  transition: 0.15s ease-in-out;
+}
+.Signup .buttons button:focus {
+  outline: 1px solid #1c2f1e;
+}
+.Signup .buttons .user {
+  background-color: #c9ffe2;
+}
+.Signup .buttons .creator {
+  background-color: #96e8bc;
+}
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #4b7f52;
+  width: 40%;
+  height: 36rem;
+  margin: 2rem 0.5rem;
+  box-shadow: 4px 4px 4px #0007;
+}
+.Login h3 {
+  font-size: 3.2rem;
+  padding: 2rem;
+  color: #eee;
+}
+.Login form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.Login .formError {
+  height: 1.4rem;
+  font-size: 1.4rem;
+  font-family: 'Bitter', Times;
+  letter-spacing: 1px;
+  color: #ea9595;
+  text-shadow: 1px 1px 0 #333;
+}
+.Login input {
+  padding: 0.8rem;
+  margin: 0.5rem 1rem;
+  text-align: center;
+  box-shadow: inset 4px 4px 3px #0009;
+  border: none;
+}
+.Login input:focus {
+  outline: 2px solid #6da975;
+}
+.Login .button {
+  cursor: pointer;
+  width: 9rem;
+  background-color: #96e8bc;
+  color: #111;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 2rem;
+  box-shadow: 4px 4px 4px #0007;
+  margin: 2rem;
+}
+.Login .button:hover {
+  background-color: #7dd181;
+  box-shadow: 5px 5px 4px #000a;
+}
+.Login .button:active {
+  box-shadow: 3px 3px 4px #000a;
+  transition: 0.15s ease-in-out;
+}
+.Login .button:focus {
+  outline: 1px solid #1c2f1e;
+}
+.Home h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  margin: 2rem;
+}
+.Home .howTo {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 2rem;
+  background-color: #96e8bc;
+  box-shadow: 4px 4px 4px #0004;
+}
+.Home .howTo h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.4rem;
+  font-family: 'Bitter', Times;
+  padding-bottom: 1rem;
+}
+.Home .howTo p {
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 1rem;
+}
+.Home .howTo h3 {
+  font-style: italic;
+  text-align: center;
+}
+.HowToEditor {
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+.HowToEditor h1 {
+  font-size: 4.8rem;
+  font-family: 'Bungee Inline', Impact;
+  margin-bottom: 10px;
+}
+.HowToEditor form {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #7dd181;
+  padding: 10px 10%;
+  box-shadow: 4px 4px 4px #0007;
+  position: absolute;
+}
+.HowToEditor .formBody {
+  width: 100%;
+}
+.HowToEditor h2 {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.HowToEditor textarea {
+  resize: none;
+}
+.HowToEditor .Title {
+  height: 2.7rem;
+  width: 100%;
+  font-size: 2rem;
+  font-family: 'Bitter', Times;
+  font-weight: bold;
+  text-align: center;
+}
+.HowToEditor .Summary {
+  height: 11.2rem;
+  width: 100%;
+  font-size: 1.8rem;
+  font-family: 'Bitter', Times;
+}
+.HowToEditor .Content {
+  width: 100%;
+  height: 60rem;
+  margin-top: 4px;
+  font-size: 1.6rem;
+  font-family: 'Bitter', Times;
+}
+.HowToEditor .help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: 'Source Code Pro', monospace;
+}
+.HowToEditor .help h3 {
+  text-align: center;
+}
+.HowToEditor .help h3:first-child {
+  text-align: left;
+  margin-left: 10px;
+}
+.HowToEditor .help h3:last-child {
+  text-align: right;
+  margin-right: 10px;
+}
+.HowToEditor .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.HowToEditor button {
+  border: none;
+  cursor: pointer;
+  width: 9rem;
+  color: #111;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 4px 4px 4px #000a;
+  margin: 2rem;
+}
+.HowToEditor button:hover {
+  box-shadow: 5px 5px 4px #000f;
+}
+.HowToEditor button:active {
+  box-shadow: 3px 3px 4px #000f;
+  transition: 0.15s ease-in-out;
+}
+.HowToEditor button:focus {
+  outline: 1px solid #1c2f1e;
+}
+.HowToEditor .preview {
+  background-color: #96e8bc;
+}
+.HowToEditor .preview:hover {
+  background-color: #6cdfa1;
+}
+.HowToEditor .submit {
+  background-color: #57c45c;
+}
+.HowToEditor .submit:hover {
+  background-color: #44bd4a;
+}
+.HowToEditor .clear {
+  background-color: #cc3;
+}
+.HowToEditor .clear:hover {
+  background-color: #a3a329;
+}
+.HowToEditor .cancel {
+  background-color: #d55;
+}
+.HowToEditor .cancel:hover {
+  background-color: #d52a2a;
+}
+.HowToEditor .formError {
+  text-align: center;
+  width: 99%;
+  margin: 6px auto;
+  height: 2.2rem;
+  font-size: 1.4rem;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #bf2626;
+  padding: 0.4rem 0;
+}
+.HowToEditor .parseContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.HowToEditor .parseContainer .parsedContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  border: #96e8bc solid 5px;
+  box-shadow: 5px 5px 4px #000f;
+  overflow: scroll;
+  width: 90%;
+  height: 90vh;
+  background-color: #fff;
+  padding: 0 5%;
+}
+.HowToEditor .parseContainer h1.title {
+  font-family: 'Bungee Inline', Impact;
+  font-size: 7.2rem;
+  font-weight: normal;
+  padding: 30px 0;
+}
+.HowToEditor .parseContainer h2.summary {
+  font-family: 'Bitter', Times;
+  font-size: 3.2rem;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.HowToEditor .parseContainer h1 {
+  font-family: 'Bungee Inline', Impact;
+  font-size: 4.2rem;
+  text-align: center;
+  width: 90%;
+  padding: 0 0 20px;
+}
+.HowToEditor .parseContainer h2 {
+  font-family: 'Bitter', Times;
+  font-size: 3rem;
+  text-align: left;
+  width: 90%;
+}
+.HowToEditor .parseContainer h3 {
+  font-family: 'Source Sans Pro', Verdana;
+  font-size: 2.4rem;
+  width: 90%;
+}
+.HowToEditor .parseContainer img {
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+.HowToEditor .parseContainer p {
+  width: 90%;
 }

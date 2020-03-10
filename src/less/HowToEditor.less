@@ -1,0 +1,187 @@
+.HowToEditor {
+  margin: 20px auto;
+  .flex(flex-start, center, column);
+
+  width: 100%;
+  h1 {
+    font-size: 4.8rem;
+    font-family: @brand-font;
+    margin-bottom: 10px;
+  }
+  form {
+    width: 90%;
+    .flex(flex-start, center, column);
+    background-color: @pastel-green;
+    padding: 10px 10%;
+    box-shadow: 4px 4px 4px #0007;
+    position: absolute;
+  }
+  .formBody {
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  textarea {
+    resize: none;
+  }
+  .Title {
+    height: 2.7rem;
+    width: 100%;
+    font-size: 2rem;
+    font-family: @sub-font;
+    font-weight: bold;
+    text-align: center;
+  }
+  .Summary {
+    height: 11.2rem;
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: @sub-font;
+  }
+  .Content {
+    width: 100%;
+    height: 60rem;
+    margin-top: 4px;
+    font-size: 1.6rem;
+    font-family: @sub-font;
+  }
+  .help {
+    .flex(space-between, center);
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: @mono-font;
+    h3 {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+        margin-left: 10px;
+      }
+      &:last-child {
+        text-align: right;
+        margin-right: 10px;
+      }
+    }
+  }
+  .buttons {
+    .flex(center, center);
+  }
+  button {
+    border: none;
+    cursor: pointer;
+    width: 9rem;
+    color: @off-black;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 4px 4px 4px #000a;
+    margin: 2rem;
+    &:hover {
+      box-shadow: 5px 5px 4px #000f;
+    }
+    &:active {
+      box-shadow: 3px 3px 4px #000f;
+      transition: 0.15s ease-in-out;
+    }
+    &:focus {
+      outline: 1px solid darken(@success-green, 25%);
+    }
+  }
+
+  .preview {
+    background-color: @teal-deer;
+    &:hover {
+      background-color: darken(@teal-deer, 10%);
+    }
+  }
+  .submit {
+    background-color: darken(@pastel-green, 10%);
+    &:hover {
+      background-color: darken(@pastel-green, 15%);
+    }
+  }
+  .clear {
+    background-color: @warning-yellow;
+    &:hover {
+      background-color: darken(@warning-yellow, 10%);
+    }
+  }
+  .cancel {
+    background-color: @error-red;
+    &:hover {
+      background-color: darken(@error-red, 10%);
+    }
+  }
+  .formError {
+    text-align: center;
+    width: 99%;
+    margin: 6px auto;
+    height: 2.2rem;
+    font-size: 1.4rem;
+    font-family: @mono-font;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: darken(@error-red, 15%);
+
+    padding: 0.4rem 0;
+  }
+  .parseContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    .flex(center, center);
+    .parsedContent {
+      .flex(flex-start, center, column);
+      border: @teal-deer solid 5px;
+      box-shadow: 5px 5px 4px #000f;
+      overflow: scroll;
+      width: 90%;
+      height: 90vh;
+      background-color: #fff;
+      padding: 0 5%;
+    }
+    h1.title {
+      font-family: @brand-font;
+      font-size: 7.2rem;
+      font-weight: normal;
+      padding: 30px 0;
+    }
+    h2.summary {
+      font-family: @sub-font;
+      font-size: 3.2rem;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+    h1 {
+      font-family: @brand-font;
+      font-size: 4.2rem;
+      text-align: center;
+      width: 90%;
+      padding: 0 0 20px;
+    }
+    h2 {
+      font-family: @sub-font;
+      font-size: 3rem;
+      text-align: left;
+      width: 90%;
+    }
+    h3 {
+      font-family: @main-font;
+      font-size: 2.4rem;
+      width: 90%;
+    }
+    img {
+      text-align: center;
+      max-width: 60%;
+      margin: 0 auto;
+    }
+    p {
+      width: 90%;
+    }
+  }
+}

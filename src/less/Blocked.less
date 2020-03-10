@@ -1,0 +1,29 @@
+.Blocked {
+  .flex(center, center, column);
+  margin: 5rem auto;
+  padding: 5rem;
+  width: 50%;
+  background-color: @success-green;
+  color: @off-white;
+  box-shadow: 4px 4px 4px #0007;
+  h1 {
+    font-size: 2.8rem;
+    font-family: @main-font;
+    padding-bottom: 3rem;
+  }
+  .buttons {
+    .flex(center, center);
+    font-size: 2.4rem;
+    a {
+      background-color: @teal-deer;
+      color: @off-black;
+      text-decoration: none;
+      box-shadow: 4px 4px 4px #0007;
+      padding: 1rem 3rem;
+      &:hover {
+        background-color: @pastel-green;
+        box-shadow: 5px 5px 4px #000a;
+      }
+    }
+  }
+}

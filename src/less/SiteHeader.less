@@ -1,0 +1,45 @@
+.SiteHeader {
+  .flex(space-between, center);
+  padding: 1rem 2rem;
+  background-color: @success-green;
+  color: @off-white;
+  .SiteName {
+    .flex(flex-start, flex-end);
+    h1 {
+      font-size: 4.2rem;
+      font-family: @brand-font;
+    }
+    h4 {
+      font-size: 1.4rem;
+      font-family: @sub-font;
+      padding-bottom: 0.4rem;
+    }
+  }
+  nav {
+    ul {
+      .flex();
+      li {
+        padding: 1.5rem 1.5rem;
+        margin: 0.5rem;
+        a {
+          font-family: @main-font;
+          font-size: 1.8rem;
+          color: inherit;
+          text-decoration: none;
+          letter-spacing: 0.1rem;
+          &.active {
+            font-weight: bold;
+          }
+        }
+
+        &:hover {
+          background-color: @pastel-green;
+          color: @success-green;
+        }
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
